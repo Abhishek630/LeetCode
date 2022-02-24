@@ -24,11 +24,12 @@ public class Solution {
             slow = slow.next;
             
             if(fast == slow){
-                while(head!=fast){
-                    head = head.next;
+                slow = head;
+                while(slow!=fast){
+                    slow = slow.next;
                     fast = fast.next;
                 }
-                return head;
+                return slow;
             }
         }
         return null;
