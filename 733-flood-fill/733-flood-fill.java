@@ -3,7 +3,7 @@ class Solution {
         if(sr<0||sc<0||sr>=rows|| sc>=cols){
             return;
         }
-        if(image[sr][sc]!=source){
+        else if(image[sr][sc]!=source){
             return;
         }
         image[sr][sc] = newColor;
