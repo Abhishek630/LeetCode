@@ -31,10 +31,12 @@ public:
             nodes[hd][level].insert(frontNode->val);
             
             if(frontNode->left){
-                q.push(make_pair(frontNode->left,make_pair(hd-1,level+1)));
+                // q.push(make_pair(frontNode->left,make_pair(hd-1,level+1)));
+                q.push({frontNode->left,{hd-1,level+1}});
             }
             if(frontNode->right){
-                q.push(make_pair(frontNode->right,make_pair(hd+1,level+1)));
+                // q.push(make_pair(frontNode->right,make_pair(hd+1,level+1)));
+                q.push({frontNode->right,{hd+1,level+1}});
             }
         }
         for(auto p:nodes)
