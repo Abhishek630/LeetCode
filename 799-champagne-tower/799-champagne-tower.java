@@ -8,10 +8,8 @@ class Solution {
             for(int j=0; j<=query_glass;j++){
                 if(glass[i][j]>1.0){
                     double rem = glass[i][j]-1;
-                    rem /=2;
-                    glass[i][j]=1;
-                    glass[i+1][j] += rem;
-                    glass[i+1][j+1] += rem;
+                    glass[i+1][j] += rem/2;
+                    glass[i+1][j+1] += rem/2;
                 }
             }
         }
