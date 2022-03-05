@@ -9,7 +9,7 @@ class Solution {
             if(ch[i]=='('){
                 count++;
             }
-            if(ch[i]==')'){
+            else if(ch[i]==')'){
                 if(count>0){
                     count--;
                 }
@@ -24,7 +24,7 @@ class Solution {
             if(ch[i]==')'){
                 count++;
             }
-            if(ch[i]=='('){
+            else if(ch[i]=='('){
                 if(count>0){
                     count--;
                 }
