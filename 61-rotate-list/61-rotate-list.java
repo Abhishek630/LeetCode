@@ -27,7 +27,6 @@ class Solution {
         for(int i=1;i<k;i++){
             prev = prev.next;
         }
-        curr.next = head;
         head = prev.next;
         prev.next = null;
         return head;
