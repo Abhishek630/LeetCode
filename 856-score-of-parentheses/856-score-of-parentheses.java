@@ -9,11 +9,11 @@ class Solution {
                 st.push(0);
             }
             else{
-                int inner = st.peek();
-                st.pop();
-                int outer = st.peek();
-                st.pop();
-                    st.push(outer+ Math.max(2* inner,1));
+                int inner = st.pop();
+                //st.pop();
+                int outer = st.pop();
+                //st.pop();
+                st.push(outer+ Math.max(2* inner,1));
             }
         }
         return st.peek();
