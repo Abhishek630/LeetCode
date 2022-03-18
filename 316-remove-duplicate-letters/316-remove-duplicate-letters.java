@@ -14,7 +14,7 @@ class Solution {
             if(vis[curr]){
                 continue;
             }
-            while (!st.isEmpty() && st.peek() > curr && i < freq[st.peek()]){
+            while (!st.isEmpty() && st.peek() > curr &&  freq[st.peek()]-i>0){
                 vis[st.pop()] = false; // pop out and mark unseen
             }
             st.push(curr); // add into stack
