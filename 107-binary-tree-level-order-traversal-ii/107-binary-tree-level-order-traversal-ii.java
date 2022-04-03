@@ -15,24 +15,28 @@
  */
 class Solution {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
-         List<List<Integer>> result = new ArrayList<List<Integer>>();
-        if(root ==null){return result;}
-        Queue<TreeNode> queue = new LinkedList<TreeNode>();
-        queue.add(root);
-        while(!queue.isEmpty()){
-            int levelNum = queue.size();
-            List<Integer> levelList = new ArrayList<Integer>();
-            for(int i=0;i<levelNum;i++){
-                TreeNode cur = queue.poll();
-                levelList.add(cur.val);
-                if(cur.left != null){
-                    queue.add(cur.left);
+        List<List<Integer>>result = new ArrayList<>();
+        if(root == null){
+            return result;
+        }
+        
+        Queue<TreeNode>q = new LinkedList<>();
+        q.add(root);
+        
+        while(!q.isEmpty()){
+            int size = q.size();
+            List<Integer> ans = new ArrayList<>();
+            for(int i=0;i<size;i++){
+                TreeNode curr = q.remove();
+                ans.add(curr.val);
+                if(curr.left!=null){
+                    q.add(curr.left);
                 }
-                if(cur.right !=null){
-                    queue.add(cur.right);
+                if(curr.right!=null){
+                    q.add(curr.right);
                 }
             }
-            result.add(0,levelList);//to insert with reversing
+            result.add(0,ans);
         }
         return result;
     }
