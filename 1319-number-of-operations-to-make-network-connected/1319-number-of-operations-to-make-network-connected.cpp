@@ -10,14 +10,14 @@ public:
             adj[connections[i][0]].push_back(connections[i][1]);
         }
         vector<bool>visited(n,false);
-        int count = -1;
+        int count = 0;
         for(int i = 0;i<n;i++){
             if(visited[i] == false){
                 BFS(adj,i,visited);
                 count++;
             }
         }
-        return count;
+        return count-1;
         
         
         // vector<bool>visited(n,false);
