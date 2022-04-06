@@ -7,45 +7,45 @@ class Solution {
   public:
     // Function to return Breadth First Traversal of given graph.
     vector<int> bfsOfGraph(int V, vector<int> adj[]) {
-        vector<int> ans;
-        vector<int> vis(V,0);
-        queue<int> q;
+        // vector<int> ans;
+        // vector<int> vis(V,0);
+        // queue<int> q;
         
-        q.push(0);
-        vis[0]=1;
-        
-        while(!q.empty()){
-            int x=q.front();
-            ans.push_back(x);
-            q.pop();
-            for(auto i:adj[x]){
-                if(!vis[i]){
-                    vis[i]=1;
-                    q.push(i);
-                }
-            }
-        }
-        return ans;
-        // vector<int>ans;
-        // vector<int> visited (V, false);
-        // queue<int>q;
-        // int s =0;
-        // visited[s]= true;
-        // q.push(s);
+        // q.push(0);
+        // vis[0]=1;
         
         // while(!q.empty()){
-        //     int u = q.front();
-        //     ans.push_back(u);
+        //     int x=q.front();
+        //     ans.push_back(x);
         //     q.pop();
-            
-        //     for(auto v:adj[u]){
-        //         if(visited[v]== false){
-        //             visited[v]== true;
-        //             q.push(v);
+        //     for(auto i:adj[x]){
+        //         if(!vis[i]){
+        //             vis[i]=1;
+        //             q.push(i);
         //         }
         //     }
         // }
         // return ans;
+        vector<int>ans;
+        vector<int> visited (V, false);
+        queue<int>q;
+        int s =0;
+        visited[s]= true;
+        q.push(s);
+        
+        while(!q.empty()){
+            int u = q.front();
+            ans.push_back(u);
+            q.pop();
+            
+            for(auto v:adj[u]){
+                if(visited[v]== false){
+                    visited[v]= true;
+                    q.push(v);
+                }
+            }
+        }
+        return ans;
     }
 };
 
