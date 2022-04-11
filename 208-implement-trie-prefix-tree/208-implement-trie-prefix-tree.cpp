@@ -80,7 +80,8 @@ public:
         TrieNode *child;
         //present
         if(root->children[index]!=NULL){
-            child= root->children[index];
+           child= root->children[index];
+            
         }
         //absent
         else{
