@@ -14,8 +14,11 @@ private:
     stack<TreeNode *> stack;
     
     void pushAll(TreeNode * node){
-        for(; node!= NULL; stack.push(node) ,node= node->left)
-;    }
+        for(; node!= NULL;){
+            stack.push(node);
+            node= node->left;
+            }
+ }
 public:
     BSTIterator(TreeNode* root) {
         pushAll(root);
