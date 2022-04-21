@@ -1,20 +1,41 @@
 class MyHashSet {
-    boolean [] arr = null;
+    private int capacity =0;
+    private List<Integer>[] set = null;
 
     public MyHashSet() {
-        arr = new boolean[1000001];
+        capacity = 1500;
+        set = new List[capacity];
     }
     
+    public int getHashKey(int key){
+        return key%capacity;
+    }
     public void add(int key) {
-        arr[key]= true;
+        int hashIndex = getHashKey(key);
+        if(set[hashIndex]== null){
+            set[hashIndex] = new LinkedList<>();
+        }
+        
+        if(set[hashIndex].indexOf(key)== -1){
+            set[hashIndex].add(key);
+        }
     }
     
     public void remove(int key) {
-        arr[key]= false;
+        if(contains(key)){
+            int hashIndex = getHashKey(key);
+            set[hashIndex].remove(set[hashIndex].indexOf(key));
+        }
     }
     
     public boolean contains(int key) {
-        return arr[key];
+        int hashIndex = getHashKey(key);
+        if(set[hashIndex]== null || set[hashIndex].indexOf(key)==-1){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }
 
