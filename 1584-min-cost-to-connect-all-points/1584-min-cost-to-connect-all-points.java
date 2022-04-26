@@ -15,7 +15,7 @@ class Solution {
             int endId = curr[1];
             int currCost = curr[2];
             
-            if(visited.contains(curr[1])){
+            if(visited.contains(endId)){
                 continue; 
             }
             
