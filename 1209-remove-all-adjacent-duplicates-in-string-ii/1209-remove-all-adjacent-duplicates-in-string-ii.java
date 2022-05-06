@@ -1,8 +1,8 @@
-class P {
+class Pair {
   char c;
   int freq;
 
-  public P(char c, int freq) {
+  public Pair(char c, int freq) {
     this.c = c;
     this.freq = freq;
   }
@@ -11,11 +11,11 @@ class P {
 
 class Solution {
     public String removeDuplicates(String s, int k) {
-        Stack<P>st = new Stack<>();
+        Stack<Pair>st = new Stack<>();
         
         for(char c : s.toCharArray()){
             if(st.isEmpty() || st.peek().c !=c){
-                st.push(new P(c,1));
+                st.push(new Pair(c,1));
             }
             else{
                 st.peek().freq++;
@@ -27,7 +27,7 @@ class Solution {
         
         StringBuilder sb = new StringBuilder();
         while(!st.isEmpty()){
-           P p = st.pop();
+           Pair p = st.pop();
              for (int i = 0; i < p.freq; ++i)
              sb.append(p.c);
         }
