@@ -11,7 +11,7 @@ class Solution {
             else{
                 int inner = st.pop();
                 //st.pop();
-                int outer = st.pop();
+                int outer  = st.pop();
                 //st.pop();
                 st.push(outer+ Math.max(2* inner,1));
             }
