@@ -19,16 +19,16 @@ public:
         }
         
         if(open>0){
-            string output1 = output;
-            output1.push_back('(');
-            solve(open-1, close, output1, ans);
+            // string output1 = output;
+            // output1.push_back('(');
+            solve(open-1, close, output+'(', ans);
     
         }
         
         if(close>open){
-            string output2 = output;
-            output2.push_back(')');
-            solve(open,close-1,output2,ans);
+            // string output2 = output;
+            // output2.push_back(')');
+            solve(open,close-1,output+')',ans);
         }
     }
 };
