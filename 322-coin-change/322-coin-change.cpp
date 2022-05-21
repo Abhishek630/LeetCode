@@ -1,48 +1,30 @@
-// class Solution {
-// public:
-//     int coinChange(vector<int>& coins, int amount) {
-//         vector<vector<int>> dp(coins.size()+1, vector<int>(amount+1.-1));
-//         int ans = helper(coins,amount,dp,coins.size()-1);
-//         return (ans<INT_MAX-1)? ans:-1;
-//     }
-    
-//     int helper(vector<int>& coins, int amount,vector<vector<int>> &dp, int n){
-//         if(amount ==0){
-//             return 0;
-//         }
-        
-//         if(n<0 || amount<0){
-//             return INT_MAX-1;
-//         }
-        
-//         if(dp[n][amount] !=-1){
-//             return dp[n][amount];
-//         }
-        
-//         int notpick = helper(coins,amount,dp,n-1);
-//         int pick = 1+helper(coins,amount-coins[n], dp, n);
-       
-//         dp[n][amount]= min(pick,notpick);
-//         return dp[n][amount];
-//     }
-// };
-
- class Solution {
+class Solution {
 public:
-    int help(vector<int>& coins, int amount, int n,vector<vector<int>>&h)
-    {
-        if(amount == 0) return 0;
-        if(n < 0 || amount < 0) return INT_MAX-1;
-        if(h[n][amount]!= -1) return h[n][amount];
-        int one = help(coins,amount,n-1,h);
-        int two = 1+help(coins,amount-coins[n],n,h);
-        h[n][amount] = min(one,two);
-        return h[n][amount];
+    int coinChange(vector<int>& coins, int amount) {
+        vector<vector<int>> dp(coins.size()+1, vector<int>(amount+1,-1));
+        int ans = helper(coins,amount,dp,coins.size()-1);
+        return (ans<INT_MAX-1)? ans:-1;
     }
     
-    int coinChange(vector<int>& coins, int amount) {
-        vector<vector<int>>h(coins.size()+1,vector<int>(amount+1,-1));
-        int ans = help(coins,amount,coins.size()-1,h);
-        return (ans < INT_MAX-1)?ans:-1;
+    int helper(vector<int>& coins, int amount,vector<vector<int>> &dp, int n){
+        if(amount ==0){
+            return 0;
+        }
+        
+        if(n<0 || amount<0){
+            return INT_MAX-1;
+        }
+        
+        if(dp[n][amount] !=-1){
+            return dp[n][amount];
+        }
+        
+        int notpick = helper(coins,amount,dp,n-1);
+        int pick = 1+helper(coins,amount-coins[n], dp, n);
+       
+        dp[n][amount]= min(pick,notpick);
+        return dp[n][amount];
     }
 };
+
+ 
