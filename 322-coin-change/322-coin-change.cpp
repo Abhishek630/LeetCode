@@ -3,7 +3,7 @@ public:
     int coinChange(vector<int>& coins, int amount) {
         vector<vector<int>> dp(coins.size()+1, vector<int>(amount+1,-1));
         int ans = helper(coins,amount,dp,coins.size()-1);
-        return (ans< INT_MAX-1)? ans:-1;
+        return (ans< INT_MAX-2)? ans:-1;
     }
     
     int helper(vector<int>& coins, int amount,vector<vector<int>> &dp, int n){
@@ -12,7 +12,7 @@ public:
         }
         
         if(n<0 || amount<0){
-            return INT_MAX-1;
+            return INT_MAX-2;
         }
         
         if(dp[n][amount] !=-1){
