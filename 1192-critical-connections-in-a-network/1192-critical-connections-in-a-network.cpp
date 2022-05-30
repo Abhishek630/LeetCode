@@ -15,10 +15,7 @@ public:
                 low[node]= min(low[node], low[nbr]);
                 
                 if(low[nbr]>disc[node]){
-                    vector<int>ans;
-                    ans.push_back(nbr);
-                    ans.push_back(node);
-                    result.push_back(ans);
+                    result.push_back({node,nbr});
                 }
             }
             else{
@@ -35,10 +32,6 @@ public:
             adj[u].push_back(v);
             adj[v].push_back(u);
         }
-        // for(auto it : connections){
-        //     adj[it[1]].push_back(it[0]);
-        //     adj[it[0]].push_back(it[1]);
-        // }
         
         int timer =0;
         vector<int>disc(n,-1);
