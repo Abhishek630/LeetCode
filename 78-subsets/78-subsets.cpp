@@ -6,9 +6,11 @@ private:
             return;
         }
         
-        solve(nums, ans, output, index+1);
+        
        // int element = nums[index];
         output.push_back(nums[index]);
+        solve(nums, ans, output, index+1);
+         output.pop_back();
         solve(nums, ans, output, index+1);
     }
 public:
