@@ -8,10 +8,11 @@ private:
         
         
        // int element = nums[index];
+       solve(nums, ans, output, index+1);
         output.push_back(nums[index]);
         solve(nums, ans, output, index+1);
-         output.pop_back();
-        solve(nums, ans, output, index+1);
+         // output.pop_back();
+        
     }
 public:
     vector<vector<int>> subsets(vector<int>& nums) {
