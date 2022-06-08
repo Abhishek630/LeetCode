@@ -12,7 +12,7 @@ public:
     void solve(vector<int> candidates, int target, vector<vector<int>> &ans, vector<int> &output, int index){
         int n = candidates.size();
         
-        if(index>n){
+        if(index==n){
             return;
         }
         if(target<0){
