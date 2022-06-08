@@ -23,16 +23,16 @@ public:
             return;
         }
         
-        for(int i=index; i<n;i++){
-            // if(candidates[i]>target){
-            //     return;
-            // }
-            
-                output.push_back(candidates[i]);
-                solve(candidates, target-candidates[i],ans,output, i);
+        // for(int i=index; i<n;i++){
+        //     // if(candidates[i]>target){
+        //     //     return;
+        //     // }
+            solve(candidates,target,ans,output,index+1);
+                output.push_back(candidates[index]);
+                solve(candidates, target-candidates[index],ans,output, index);
                 output.pop_back();
             
-        }
+        // }
 
 
 
