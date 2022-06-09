@@ -9,7 +9,7 @@ class Solution {
         while(!q.isEmpty()){
             int size = q.size();
             while(size-->0){
-                Integer head = q.poll();
+                int head = q.poll();
                 if(arr[head]==0){
                     return true;
                 }
