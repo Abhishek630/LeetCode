@@ -8,7 +8,7 @@ public:
             deg[x[1]]++;
         }
         
-      for(int i=1; i<deg.size(); i++){
+      for(int i=0; i<deg.size(); i++){
           if(deg[i]== n){
               return i;
           }
