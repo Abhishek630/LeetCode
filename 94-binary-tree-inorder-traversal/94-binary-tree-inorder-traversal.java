@@ -34,8 +34,9 @@ class Solution {
                     curr = curr.left;
                 }
                 else{
-                    pred.right = null;
                     ans.add(curr.val);
+                    pred.right = null;
+                    
                     curr= curr.right;
                 }
             }
