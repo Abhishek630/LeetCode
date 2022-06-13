@@ -137,11 +137,12 @@ vector<int> diagonal(Node *root)
             q.pop();
             
             while(frontNode){
+              ans.push_back(frontNode->data);
             if(frontNode->left){
                 // q.push(make_pair(frontNode->left,make_pair(hd-1,level+1)));
                 q.push(frontNode->left);
             }
-            ans.push_back(frontNode->data);
+            
             frontNode = frontNode->right;
         }
         }
