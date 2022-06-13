@@ -17,7 +17,6 @@ public:
         int first, last, width =0;
         while(!q.empty()){
             int size = q.size();
-            int minn=q.front().second;
             for(int i=0; i<size;i++){
                 pair<TreeNode*, int> front =q.front();
                 q.pop();
