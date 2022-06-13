@@ -22,7 +22,7 @@ public:
                 pair<TreeNode*, int> front =q.front();
                 q.pop();
                 TreeNode* frontNode = front.first;
-                long long int count = front.second-minn;
+                long long int count = front.second;
                 
                 if(i==0){
                     first = count;
