@@ -31,12 +31,12 @@ class Solution {
                 
                 if(pred.right == null){
                     pred.right = curr;
+                   
                     curr = curr.left;
                 }
                 else{
-                    ans.add(curr.val);
+                     ans.add(curr.val);
                     pred.right = null;
-                    
                     curr= curr.right;
                 }
             }
