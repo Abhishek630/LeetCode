@@ -18,6 +18,10 @@ public:
     }
     int minDistance(string s1, string s2) {
         int m = s1.size(), n = s2.size();
-        return m+n-2*lcs(s1,s2,m,n) ;
+        // return m+n-2*lcs(s1,s2,m,n) ;
+        int ans = lcs(s1,s2,m,n);
+        int del1= m-ans;
+        int del2= n-ans;
+        return del1+del2;
     }
 };
