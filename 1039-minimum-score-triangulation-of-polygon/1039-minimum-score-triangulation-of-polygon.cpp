@@ -26,9 +26,9 @@
 class Solution {
 public:
     
-    int dp[51][51];
+    // int dp[51][51];
     
-    int solve(vector<int>&values, int i, int j)
+    int solve(vector<int>&values, int i, int j,vector<vector<int>>&dp)
     {
         if(i>=j)
             return 0;
@@ -39,7 +39,7 @@ public:
         
         for(int k=i;k<=j-1;k++)
         {
-            int temp = solve(values,i,k) + solve(values,k+1,j) + values[i-1]*values[j]*values[k];
+            int temp = solve(values,i,k,dp) + solve(values,k+1,j,dp) + values[i-1]*values[j]*values[k];
                 
             ans = min(ans,temp);
         }
@@ -53,8 +53,9 @@ public:
         
         int i = 1;
         int j = n-1;
-        memset(dp,-1,sizeof(dp));
-        return solve(values,i,j);
+        vector<vector<int>>dp(n+1,vector<int>(n+1,-1));
+        // memset(dp,-1,sizeof(dp));
+        return solve(values,i,j,dp);
         
     }
 };
