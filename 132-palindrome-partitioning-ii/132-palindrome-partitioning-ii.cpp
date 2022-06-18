@@ -35,7 +35,10 @@ public:
 //                right = solve(s,k+1,j,dp);
 //                 dp[k+1][j]= right;
 //             }
-            if(!isPal(s,i,k)){
+            // if(!isPal(s,i,k)){
+            //     continue;
+            // }
+            if(!isPal(s,k+1,j)){
                 continue;
             }
             int temp = 1+solve(s,i,k,dp)+solve(s,k+1,j,dp);
