@@ -43,8 +43,8 @@ public:
                 
             ans = min(ans,temp);
         }
-        dp[i][j] = ans;
-        return dp[i][j];
+       return dp[i][j] = ans;
+        // return dp[i][j];
     }
     
     int minScoreTriangulation(vector<int>& values) {
