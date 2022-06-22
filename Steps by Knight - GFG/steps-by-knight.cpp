@@ -91,7 +91,7 @@ bool isValid(int i, int j, int n, vector<vector<bool>>&visited){
 	        
 	        int size = q.size();
 	        ans++;
-	        while(size != 0){
+	        while(size > 0){
 	            pair<int,int>p = q.front();
 	            q.pop();
 	            
