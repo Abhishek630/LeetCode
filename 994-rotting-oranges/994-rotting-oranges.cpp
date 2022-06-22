@@ -37,8 +37,8 @@ public:
                 int x1= p.first;
                 int y1= p.second;
                 
-                int ax[4]={1,-1,0,0};
-                int ay[4]={0,0,1,-1};
+                int ax[4]={1,0,-1,0};
+                int ay[4]={0,1,0,-1};
                 
                 for(int i=0;i<4;i++){
                     int x = ax[i]+x1;
