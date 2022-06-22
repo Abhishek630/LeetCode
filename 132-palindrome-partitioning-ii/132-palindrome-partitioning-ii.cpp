@@ -1,8 +1,8 @@
 class Solution {
 public:
     int solve(string &s,int i, int j, vector<vector<int>>&dp){
-        int left = -1;
-        int right =-1;
+        // int left = -1;
+        // int right =-1;
         if(i>=j){
             dp[i][j]=0;
             return 0;
