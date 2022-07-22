@@ -44,6 +44,10 @@ class Solution {
         if(left && right && value){
             return true;
         }
+        
+        // if(p!=null && q!=null && p.val == q.val){
+        //     return true;
+        // }
         return false;
     }
 }
