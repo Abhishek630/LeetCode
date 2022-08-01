@@ -36,9 +36,9 @@ class Solution {
                        curr.right.next =curr.next.left;
                     }
                 }
-                else{
-                    break;
-                }
+                // else{
+                //     break;
+                // }
             }
             root = root.left;
             
