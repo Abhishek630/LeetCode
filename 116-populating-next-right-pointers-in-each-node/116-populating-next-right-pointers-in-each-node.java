@@ -28,7 +28,7 @@ class Solution {
         }
         Node head = root;
         
-        for(;root!=null;root=root.left){
+        while(root!=null){
             for(Node curr = root; curr!=null; curr=curr.next){
                 if(curr.left!=null){
                     curr.left.next=curr.right;
@@ -40,6 +40,7 @@ class Solution {
                     break;
                 }
             }
+            root = root.left;
             
         }
         return head;
