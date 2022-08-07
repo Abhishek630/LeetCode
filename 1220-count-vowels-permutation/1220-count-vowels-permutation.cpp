@@ -14,7 +14,7 @@ public:
         mp1['o'] =1;
         mp1['u'] =1; 
     
-    for(int i=1; i<n; i++){
+    for(int i=1;i<n; i++){
         for(auto c:mp1){
             if(c.first =='a'){
                 mp2['e'] += (c.second%mod);
