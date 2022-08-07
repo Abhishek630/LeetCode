@@ -45,8 +45,7 @@ public:
         
         for(auto c : mp1){
             ans = ans+(c.second%mod);
-            ans%=mod;
         }
-        return ans;
+        return ans%mod;
     }
 };
