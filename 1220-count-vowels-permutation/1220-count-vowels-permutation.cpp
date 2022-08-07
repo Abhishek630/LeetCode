@@ -19,21 +19,21 @@ public:
             if(c.first =='a'){
                 mp2['e'] += (c.second%mod);
             }
-            if(c.first =='e'){
+            else if(c.first =='e'){
                 mp2['a'] += (c.second%mod);
                 mp2['i'] += (c.second%mod);
             }
-            if(c.first =='i'){
+            else if(c.first =='i'){
                 mp2['a'] += (c.second%mod);
                 mp2['e'] += (c.second%mod);
                 mp2['o'] += (c.second%mod);
                 mp2['u'] += (c.second%mod);
             }
-            if(c.first =='o'){
+            else if(c.first =='o'){
                 mp2['i'] += (c.second%mod);
                 mp2['u'] += (c.second%mod);
             }
-            if(c.first =='u'){
+            else if(c.first =='u'){
                 mp2['a'] += (c.second%mod);
             }
         }
