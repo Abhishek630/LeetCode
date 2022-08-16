@@ -9,7 +9,7 @@ public:
             mp[x]++;
         }
         
-        for(int i=0;i<s.size();i++)
+        for(int i=0;i<n;i++)
         {
             if(mp[s[i]]==1)
             {
@@ -18,11 +18,5 @@ public:
         }
         return -1;
            
-         
-//         for (auto itr = mp.begin(); itr != mp.end(); ++itr) {
-//         cout << '\t' << itr->first << '\t' << itr->second
-//              << '\n';
-//     }
-
     }
 };
