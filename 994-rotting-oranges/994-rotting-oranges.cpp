@@ -1,3 +1,13 @@
+struct node{
+    int x, y, time;
+    
+    node(int _x, int _y, int _time){
+        x =_x;
+        y= _y;
+        time = _time;
+    }
+};
+
 class Solution {
 public:
     
@@ -11,62 +21,51 @@ public:
         int n = grid.size();
         int m = grid[0].size();
         
-        int fresh =0;
-        int time =0;
-        queue<pair<int,int>>q;
+        int oranges =0;
+        queue<node>q;
         
         for(int i=0;i<n;i++){
             for(int j=0;j<m;j++){
                 if(grid[i][j]==2){
-                    q.push({i,j});
+                    q.push(node(i,j,0));
                 }
-                else if(grid[i][j]==1){
-                    fresh++;
+                if(grid[i][j]!=0){
+                    oranges++;
                 }
             }
         }
         
+        int cnt =0;
+        int ans =0;
         while(!q.empty()){
             int size = q.size();
-            int temp =0;
             
             for(int i=0;i<size;i++){
-                pair<int,int>p = q.front();
+                int x = q.front().x;
+                int y = q.front().y;
+                int time = q.front().time;
                 q.pop();
+                cnt++;
                 
-                int x1= p.first;
-                int y1= p.second;
-                
+                ans = max(ans,time);
                 int ax[4]={1,0,-1,0};
                 int ay[4]={0,1,0,-1};
                 
                 for(int i=0;i<4;i++){
-                    int x = ax[i]+x1;
-                    int y = ay[i]+y1;
+                    int newX = ax[i]+x;
+                    int newY = ay[i]+y;
                     
-                    if(isValid(x,y,n,m,grid)){
-                        grid[x][y]=2;
-                        q.push({x,y});
-                        temp++;
+                    if(isValid(newX,newY,n,m,grid)){
+                        grid[newX][newY]=2;
+                        q.push(node(newX,newY,time+1));
+
                     }
                 }
             }
-            if(temp!=0){
-                time++;
-            }
         }
-        
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
-                if(grid[i][j]==1){
-                    time=0;
-                    return -1;
-                }
-            }
+        if(oranges == cnt){
+            return ans;
         }
-        
-       
-        
-        return time;
+        return -1;
     }
 };
