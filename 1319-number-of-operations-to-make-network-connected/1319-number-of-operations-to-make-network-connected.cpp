@@ -5,47 +5,40 @@ public:
             return -1;
         }
         vector<int> adj[n];
-        for(int i = 0;i<connections.size();i++){
-            adj[connections[i][1]].push_back(connections[i][0]);   
-            adj[connections[i][0]].push_back(connections[i][1]);
+        // for(int i = 0;i<connections.size();i++){
+        //     adj[connections[i][1]].push_back(connections[i][0]);   
+        //     adj[connections[i][0]].push_back(connections[i][1]);
+        // }
+        for(auto x: connections){
+            adj[x[1]].push_back(x[0]);   
+            adj[x[0]].push_back(x[1]);   
         }
         vector<bool>visited(n,false);
         int count = 0;
         for(int i = 0;i<n;i++){
             if(visited[i] == false){
-                BFS(adj,i,visited);
+                DFS(adj,i,visited);
                 count++;
             }
         }
         return count-1;
-        
-        
-        // vector<bool>visited(n,false);
-        // int count =0;
-        // for(int i=0;i<n;i++){
-        //     if(visited[i]==false){
-        //         count++;
-        //         BFS(connections,i,visited);
-        //     }
-        // }
-        // return count-1;
     }
     
-    void BFS(vector<int> adj[], int s,vector<bool>& visited){
-        queue<int>q;
-        visited[s]= true;
-        q.push(s);
+    void DFS(vector<int> adj[], int src,vector<bool>& visited){
+        // queue<int>q;
+        visited[src]= true;
+        // q.push(s);
         
-        while(!q.empty()){
-            int u = q.front();
-            q.pop();
+//         while(!q.empty()){
+//             int u = q.front();
+//             q.pop();
             
-            for(auto i: adj[u]){
+            for(auto i: adj[src]){
                 if(visited[i]==false){
                     visited[i]= true;
-                    q.push(i);
+                    DFS(adj,i,visited);
                 }
             }
-        }
+        // }
     }
 };
