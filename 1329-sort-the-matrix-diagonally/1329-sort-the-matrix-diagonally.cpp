@@ -21,7 +21,7 @@ public:
             }
         }
         
-         for(int j=0; j<col-1; j++) {
+         for(int j=0; j<col; j++) {
 
             vector<int> temp;
             for(int k=j, i=0; i<row && k<col; ) 
