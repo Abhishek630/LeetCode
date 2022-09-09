@@ -17,7 +17,7 @@ public:
             if(properties[i][1]< maxi){
                 ans++;
             }
-            if(properties[i][1]> maxi){
+            if(properties[i][1]>=maxi){
                 maxi = properties[i][1];
             }
         }
