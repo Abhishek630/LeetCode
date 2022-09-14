@@ -37,7 +37,7 @@ public:
             }
             return;
         }
-        solve(root->left, pp);
-        solve(root->right,pp);
+        solve(root->right, pp);
+        solve(root->left,pp);
     }
 };
